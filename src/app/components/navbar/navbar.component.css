@@ -1,0 +1,26 @@
+
+mat-toolbar
+{
+  z-index: 1;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  position: fixed;
+  height: 56px;
+}
+.mat-toolbar.mat-primary {
+  background: #343a40;
+  color: #fff;
+}
+
+.btn{
+  float: right;
+  margin-left: auto;
+  margin-right: 30px;
+  border: 2px solid;
+}
+.btn:hover
+{
+  border-color:#17a2b8 ;
+  color:#17a2b8 ;
+}

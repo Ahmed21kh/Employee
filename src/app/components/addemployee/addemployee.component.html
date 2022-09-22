@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 ">
+        <a  href="#" routerLink="/"   class="btn btn-warning shadow-lg"> <i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Back to Dashboard   </a>
+
+    </div>
+    <div class="col-md=12 mt-5">
+         <h2> <i class="fa fa-plus" aria-hidden="true"></i> Add employee </h2>
+    </div>
+
+    <div class="col-md-12 mt-5">
+      <form novalidate #fo="ngForm" (ngSubmit)=" mySubmit(fo)" >
+      <div class="row">
+
+
+            <div class="col-md-6 ">
+              <div class="form-group" >
+                <label >First Name</label>
+                <input type="text" class="form-control shadow-lg "  [(ngModel)]="employee.firstName"  name="firstName"  #firstName="ngModel" required minlength="4" placeholder="First Name">
+                <div class="alert alert-danger" *ngIf="firstName.errors?.required && firstName.touched ">First Name is required</div>
+                <div class="alert alert-danger" *ngIf="firstName.errors?.minlength && firstName.touched ">Min required is 4 numbers</div>
+              </div>
+                <br>
+            <div class="form-group" >
+              <label >Last Name </label>
+              <input type="text" class="form-control shadow-lg" [(ngModel)]="employee.lastName" name="lastName"  #lastName="ngModel" required  minlength="4" placeholder="Last Name">
+              <div class="alert alert-danger" *ngIf="lastName.errors?.required && lastName.touched ">Last Name is required</div>
+              <div class="alert alert-danger" *ngIf="lastName.errors?.minlength && lastName.touched ">Min required is 4 numbers</div>
+            </div>
+              <br>
+          <div class="form-group" >
+              <label>Email</label>
+              <input type="email" class="form-control shadow-lg" [(ngModel)]="employee.email" name="email"  #email="ngModel" required minlength="6" placeholder="Email">
+
+            <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched ">Email is required</div>
+            <div class="alert alert-danger" *ngIf="email.errors?.minlength && email.touched ">Min required is 6 numbers</div>
+          </div>
+            <br>
+            </div>
+            <div class="col-md-6 pl-4">
+              <div class="form-group" >
+                <label>Country</label>
+                <input type="text" class="form-control shadow-lg" [(ngModel)]="employee.country" name="country"  #country="ngModel" required minlength="4" placeholder="Country">
+                <div class="alert alert-danger" *ngIf="country.errors?.required && country.touched "> Country is required</div>
+              </div>
+                <br>
+              <div class="form-group" >
+                <label>City</label>
+                <input type="text" class="form-control shadow-lg" [(ngModel)]="employee.city" name="city"  #city="ngModel" required minlength="4" placeholder="City">
+                <div class="alert alert-danger" *ngIf="city.errors?.required && city.touched "> City is required</div>
+              </div>
+                <br>
+              <div class="form-group" >
+                <label>Phone</label>
+                <input type="text" class="form-control shadow-lg" [(ngModel)]="employee.phone" name="phone"  #phone="ngModel" required minlength="11" placeholder="Phone">
+                <div class="alert alert-danger" *ngIf="phone.errors?.required && phone.touched "> phone is required</div>
+                <div class="alert alert-danger" *ngIf="phone.errors?.minlength && phone.touched ">Min required is 11 numbers</div>
+              </div>
+                <br>
+            </div>
+    </div>
+
+        <div class="form-group" >
+        <label>Salary</label>
+        <input type="number" class="form-control shadow-lg" [(ngModel)]="employee.salary" name="salary"  #salary="ngModel" [disabled]="disableSalary" placeholder="Salary">
+      </div>
+
+
+        <button type="submit" class="btn btn-primary mb-5 mt-4 shadow-lg" > Submit</button><br>
+        <div *ngIf="verifyForm!='' ">
+          <h3>Submited Data</h3>
+          <p>first name :{{employee.firstName}}</p>
+          <p>last name :{{employee.lastName}}</p>
+          <p>Email :{{employee.email}}</p>
+          <p>Country :{{employee.country}}</p>
+          <p>City :{{employee.city}}</p>
+          <p>Phone :{{employee.phone}}</p>
+          <p>Salary : {{employee.salary | currency:"USD"}}</p>
+
+        </div>
+
+
+
+    </form>
+
+    </div>
+
+
+
+  </div>
+</div>
+
+<style>
+  .container{
+    padding-top: 20px;
+  }
+  label {
+    font-weight: bold;
+  }
+</style>

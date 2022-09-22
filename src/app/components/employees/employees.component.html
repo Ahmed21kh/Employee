@@ -1,0 +1,56 @@
+  <div *ngIf=" itemarray.length>0; else Noemployee">
+
+ <div class="container">
+  <div class="row mb-5">
+    <div class="col-sm-6">
+      <h3><i class="fa fa-users" aria-hidden="true" ></i> Total employees : {{totalEmployees}}</h3>
+    </div>
+    <div class="col-sm-6">
+      <h3> <i class="fa fa-money" aria-hidden="true" style="color:darkgreen;"></i> Total salary : {{totalSalarySum | currency:"USD" : true}}</h3>
+    </div>
+    <br><br><br>
+
+    <table class="table table-striped text-center ">
+      <thead class="thead-dark">
+        <tr>
+        <th >First Name</th>
+        <th scope="col">Last Name</th>
+        <!-- <th scope="col">Email</th>
+        <th scope="col">Country</th>
+        <th scope="col">City</th>
+        <th scope="col">Phone</th> -->
+        <th scope="col">Salary</th>
+        <!-- <th scope="col">ID</th> -->
+        <th scope="col">  </th>
+
+       </tr>
+      </thead>
+    <tbody>
+      <tr *ngFor="let item of itemarray" >
+
+        <th >{{item.firstName}}</th>
+        <th >{{item.lastName}}</th>
+        <!-- <th >{{item.email}}</th>
+        <th >{{item.country}}</th>
+        <th >{{item.city}}  </th>
+        <th >{{item.phone}} </th> -->
+        <th >{{item.salary | currency:"USD"}}</th>
+        <!-- <th >{{item.$key}}  </th> -->
+        <th ><a href="#" [routerLink]="['employee/'+ item.$key]" class="btn btn-primary"> More   <i class="fa fa-info-circle" ></i> </a></th>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+  </div>
+ </div>
+
+
+  </div>
+  <ng-template #Noemployee > <h2>OOPS!! Empty Database Please Login to show database !!</h2></ng-template>
+
+
+
+
+

@@ -1,0 +1,78 @@
+
+
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12 mt-5 mb-5">
+      <a  href="#" routerLink="/"   class="btn btn-warning shadow-lg"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Back to Dashboard   </a>
+
+  </div>
+     <div class="col-sm-6">
+      <a href="#" [routerLink]="['/edit-employee/'+ id]" class="btn btn-primary"> Edit  <i class="fa fa-pencil" ></i> </a>
+
+      <button href="#" (click)="myDelete()" class="btn btn-danger ml-3"> Delete <i class="fa fa-trash" ></i> </button>
+    </div>
+    <div class="col-sm-6">
+
+     </div>
+     <br><br><br>
+     <div class="container">
+      <h3 [class.text-danger]="hasSalary" [class.text-primary]="!hasSalary"> <i class="fa fa-money" aria-hidden="true" style="color:darkgreen;"></i> Salary : {{employee.salary | currency:"USD" : true}}
+       <a style="cursor:pointer;" (click)="ubdateSalaryInput=!ubdateSalaryInput"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+      </h3>
+     </div>
+
+     <form *ngIf="ubdateSalaryInput" (submit)="ubdateSalaryEmployee(id)">
+      <div class="form-group">
+
+        <input type="text" class="form-control" name="salary" [(ngModel)]="employee.salary" aria-describedby="emailHelp">
+
+      </div>
+
+      <button type="submit" class="btn btn-primary mb-3">Submit</button>
+    </form>
+
+
+     <table class="table table-striped text-center shadow-lg">
+       <thead class="thead-dark">
+         <tr>
+         <th scope="col">First Name</th>
+         <th scope="col">Last Name</th>
+         <th scope="col">Email</th>
+         <th scope="col">Country</th>
+         <th scope="col">City</th>
+         <th scope="col">Phone</th>
+         <th scope="col">Salary</th>
+         <th scope="col">ID</th>
+
+
+        </tr>
+       </thead>
+     <tbody>
+       <tr>
+
+         <th >{{employee.firstName}}</th>
+         <th >{{employee.lastName}}</th>
+         <th >{{employee.email}}</th>
+         <th >{{employee.country}}</th>
+         <th >{{employee.city}}  </th>
+         <th >{{employee.phone}} </th>
+         <th >{{employee.salary | currency:"USD"}}</th>
+         <th >{{employee.$key}}  </th>
+
+
+       </tr>
+
+     </tbody>
+   </table>
+   </div>
+  </div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <h1 *ngIf="user$ | async as user " class="text-success" > Welcom to our app , {{user.displayName }}</h1>
+    <div class="col-lg-10 col-md-12 col-sm-12 shadow-lg">
+
+      <app-employees></app-employees>
+    </div>
+    <div class=" col-lg-2 col-md-12  col-sm-12">
+      <app-sidebar></app-sidebar>
+
+    </div>
+
+
+  </div>
+
+</div>
+<style>
+  .container{
+    padding-top: 30px;
+  }
+</style>
+
+

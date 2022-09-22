@@ -1,0 +1,10 @@
+.form-control.ng-touched.ng-invalid{
+  border: 2px solid rgb(233, 58, 58);
+  box-shadow:0 0 0 0.2rem rgb(228 176 176);
+
+}
+.form-control.ng-valid{
+  border: 2px solid rgb(62, 213, 78);
+  box-shadow:0 0 0 0.2rem rgb(191 232 198 / 84%);
+  outline: 0;
+}

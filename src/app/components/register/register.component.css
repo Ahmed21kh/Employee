@@ -1,0 +1,32 @@
+/* start */
+
+mat-toolbar
+{
+  justify-content: space-between;
+}
+.form-contaainer
+{
+  display: block;
+  max-width: 400px;
+  margin: auto;
+  background: #eceff1;
+  padding: 48px;
+  border-radius:16px ;
+
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.margin-top{
+  margin-top: 16px;
+}
+.text-center
+{
+  text-align: center;
+}
+.sign-up-link{
+  font-size: 1.2rem;
+  margin-left: 8px;
+}
+/* end */
